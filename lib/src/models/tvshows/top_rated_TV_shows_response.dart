@@ -2,10 +2,10 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'TV_show_brief.dart';
 
-part 'on_the_air_TV_shows_response.g.dart';
+part 'top_rated_TV_shows_response.g.dart';
 
 @JsonSerializable()
-class OnTheAirTVShowsResponse {
+class TopRatedTVShowsResponse {
   @JsonKey(name: "page")
   int page;
   @JsonKey(name: "results")
@@ -15,11 +15,11 @@ class OnTheAirTVShowsResponse {
   @JsonKey(name: "total_pages")
   int totalPages;
 
-  OnTheAirTVShowsResponse(
+  TopRatedTVShowsResponse(
       this.page, this.results, this.totalResults, this.totalPages);
 
-  factory OnTheAirTVShowsResponse.fromJson(Map<String, dynamic> json) =>
-      _$OnTheAirTVShowsResponseFromJson(json);
+  factory TopRatedTVShowsResponse.fromJson(Map<String, dynamic> json) =>
+      _$TopRatedTVShowsResponseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$OnTheAirTVShowsResponseToJson(this);
+  Map<String, dynamic> toJson() => _$TopRatedTVShowsResponseToJson(this);
 }

@@ -1,6 +1,9 @@
 import 'package:flutter_movietime/src/models/genre/genre.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+part 'movie.g.dart';
+
+@JsonSerializable()
 class Movie {
   @JsonKey(name: "genres")
   List<Genre> genres;
@@ -74,6 +77,8 @@ class Movie {
       this.video,
       this.voteAverage,
       this.voteCount);
+
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
+
   Map<String, dynamic> toJson() => _$MovieToJson(this);
 }

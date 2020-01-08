@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'movie_crew_brief.g.dart';
+part 'TV_show_crew_brief.g.dart';
 
 @JsonSerializable()
-class MovieCrewBrief {
+class TVShowCrewBrief {
   @JsonKey(name: "credit_id")
   String creditId;
   @JsonKey(name: "department")
@@ -19,11 +19,11 @@ class MovieCrewBrief {
   @JsonKey(name: "profile_path")
   String profilePath;
 
-  MovieCrewBrief(this.creditId, this.department, this.gender, this.id, this.job,
-      this.name, this.profilePath);
+  TVShowCrewBrief(this.creditId, this.department, this.gender, this.id,
+      this.job, this.name, this.profilePath);
 
-  factory MovieCrewBrief.fromJson(Map<String, dynamic> json) =>
-      _$MovieCrewBriefFromJson(json);
+  factory TVShowCrewBrief.fromJson(Map<String, dynamic> json) =>
+      _$TVShowCrewBriefFromJson(json);
 
-  Map<String, dynamic> toJson() => _$MovieCrewBriefToJson(this);
+  Map<String, dynamic> toJson() => _$TVShowCrewBriefToJson(this);
 }

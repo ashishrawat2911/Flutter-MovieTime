@@ -1,6 +1,9 @@
 import 'package:flutter_movietime/src/models/movie/movie_brief.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+part 'popular_movies_response.g.dart';
+
+@JsonSerializable()
 class PopularMoviesResponse {
   @JsonKey(name: "page")
   int page;

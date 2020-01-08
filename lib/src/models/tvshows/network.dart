@@ -1,15 +1,18 @@
+import 'package:json_annotation/json_annotation.dart';
 
+part 'network.g.dart';
 
- import 'package:json_annotation/json_annotation.dart';
-
+@JsonSerializable()
 class Network {
+  @JsonKey(name: "id")
+  int id;
+  @JsonKey(name: "name")
+  String name;
 
-    @JsonKey(name:"id")
-     Integer id;
-    @JsonKey(name:"name")
-     String name;
+  Network(this.id, this.name);
 
-    Network(this.id, this.name);
-    factory Network.fromJson(Map<String, dynamic> json) => _$NetworkFromJson(json);
-    Map<String, dynamic> toJson() => _$NetworkToJson(this);
+  factory Network.fromJson(Map<String, dynamic> json) =>
+      _$NetworkFromJson(json);
+
+  Map<String, dynamic> toJson() => _$NetworkToJson(this);
 }

@@ -1,9 +1,9 @@
-
-
 import 'package:json_annotation/json_annotation.dart';
 
-class MovieBrief {
+part 'movie_brief.g.dart';
 
+@JsonSerializable()
+class MovieBrief {
   @JsonKey(name: "vote_count")
   int voteCount;
   @JsonKey(name: "id")
@@ -33,11 +33,24 @@ class MovieBrief {
   @JsonKey(name: "release_date")
   String releaseDate;
 
-  MovieBrief(this.voteCount, this.id, this.video, this.voteAverage, this.title,
-      this.popularity, this.posterPath, this.originalLanguage,
-      this.originalTitle, this.genreIds, this.backdropPath, this.adult,
-      this.overview, this.releaseDate);
+  MovieBrief(
+      this.voteCount,
+      this.id,
+      this.video,
+      this.voteAverage,
+      this.title,
+      this.popularity,
+      this.posterPath,
+      this.originalLanguage,
+      this.originalTitle,
+      this.genreIds,
+      this.backdropPath,
+      this.adult,
+      this.overview,
+      this.releaseDate);
 
-  factory  MovieBrief.fromJson(Map<String, dynamic> json) => _$ MovieBriefFromJson(json);
-  Map<String, dynamic> toJson() => _$ MovieBriefToJson(this);
+  factory MovieBrief.fromJson(Map<String, dynamic> json) =>
+      _$MovieBriefFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MovieBriefToJson(this);
 }

@@ -4,6 +4,9 @@ import 'package:json_annotation/json_annotation.dart';
  * Created by ashish on 20/6/18.
  */
 
+part 'movie_cast_of_persons.g.dart';
+
+@JsonSerializable()
 class MovieCastOfPerson {
   @JsonKey(name: "character")
   String character;
@@ -38,8 +41,7 @@ class MovieCastOfPerson {
   @JsonKey(name: "poster_path")
   String posterPath;
 
-  MovieCastOfPerson(
-      this.character,
+  MovieCastOfPerson(this.character,
       this.creditId,
       this.releaseDate,
       this.voteCount,
@@ -55,6 +57,8 @@ class MovieCastOfPerson {
       this.backdropPath,
       this.overview,
       this.posterPath);
+
   factory MovieCastOfPerson.fromJson(Map<String, dynamic> json) => _$MovieCastOfPersonFromJson(json);
+
   Map<String, dynamic> toJson() => _$MovieCastOfPersonToJson(this);
 }
